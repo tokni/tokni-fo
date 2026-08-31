@@ -19,7 +19,15 @@
   <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="css/main.css">
   
-  <script defer data-domain="tokni.fo" src="https://fantilsi.com/js/f.js"></script>
+  <script>
+    if (window.location.hostname === 'tokni.fo') {
+      const analyticsScript = document.createElement('script');
+      analyticsScript.defer = true;
+      analyticsScript.dataset.domain = 'tokni.fo';
+      analyticsScript.src = 'https://web-analytics.usable.dev/js/uwa.js';
+      document.head.appendChild(analyticsScript);
+    }
+  </script>
 </head>
 <body>
   <header class="header" role="banner">
